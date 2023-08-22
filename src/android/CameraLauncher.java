@@ -1313,8 +1313,7 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
 
     public void onRequestPermissionResult(int requestCode, String[] permissions,
                                           int[] grantResults) throws JSONException {
-        String version = android.os.Build.VERSION.RELEASE;
-        if(Integer.parseInt(version) <= 13)
+        if(Build.VERSION.SDK_INT <= Build.VERSION_CODES.TIRAMISU)
         {
             if(PermissionHelper.hasPermission(this, Manifest.permission.CAMERA)) {
                 switch (requestCode) {
